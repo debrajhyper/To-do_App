@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="author" content="Debraj Karmakar">
+    <meta name="keywords" content="to-do,list,To-do,T-do lists,Tasks,Notepad,task,to-do app,notification,save">
+    <meta name="description" content="Infinitely flexible. Incredibly easy to use. Great responsive Web app. It's free. This To-do website keeps track of everything, from the big picture to the minute details.">
+    <meta property="og:type" content="webApp" />
+    <meta property="og:title" content="To-do App" />
+    <meta property="og:description" content="Infinitely flexible. Incredibly easy to use. Great responsive Web app. It's free. This To-do website keeps track of everything, from the big picture to the minute details." />
+    <meta property="og:image" content="assets/img/wish-list.png" />
+    <meta property="og:url" content="https://debrajhyper.github.io/todoapp.github.io/" />
+    <meta property="og:site_name" content="To-do App" /> 
+    <meta name="twitter:title" content="To-do App">
+    <meta name="twitter:description" content="Infinitely flexible. Incredibly easy to use. Great responsive Web app. It's free. This To-do website keeps track of everything, from the big picture to the minute details.">
+    <meta name="twitter:image" content="assets/img/wish-list.png">
+    <meta name="twitter:site" content="@Debraj33938079">
+    <meta name="twitter:creator" content="@Debraj33938079">
+    <title>To-do App</title>
+    <link rel="icon" href="assets/img/wish-list.png" type="image/icon type">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/scroll.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <h1 class="title">Stuff I need to do</h1>
+
+
+
+
+    <div class="all_task">
+        <h1 class="task_list_title">
+            <img src="assets/img/wish-list.png"/>
+            My Lists
+        </h1>
+        <ul class="task_list" data-lists>
+            <!-- <li class="list_name active_list">youtube</li>
+            <li class="list_name">work</li>
+            <li class="list_name">Grocery</li> -->
+        </ul>
+        <form action="" data-new-list-form>
+            <input class="new list" type="text" data-new-list-input placeholder="New List Name" area-label="new list name">
+            <button class="btn create" aria-label="create new list">+</button>
+        </form>
+    </div>
+
+
+<div class="box">
+    <div class="square" style="--i:0"></div>
+    <div class="square" style="--i:1"></div>
+    <div class="square" style="--i:2"></div>
+    <div class="square" style="--i:3"></div>
+
+    <div class="todo_list" data-list-display-container>
+
+        <div class="todo_header">
+            <h1 class="list_title" data-list-title></h1>
+            <p class="task_count" data-list-count></p>
+        </div>
+
+
+        <div class="todo_body">
+
+            <div class="tasks" data-tasks>
+                <!-- <div class="task">
+                    <input type="checkbox" id="task-1"/>
+                    <label for="task-1">
+                        <span class="custom_checkbox"></span>
+                        Label
+                    </label>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task-2"/>
+                    <label for="task-2">
+                        <span class="custom_checkbox"></span>
+                        Label
+                    </label>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task-3"/>
+                    <label for="task-3">
+                        <span class="custom_checkbox"></span>
+                        Label
+                    </label>
+                </div>-->
+            </div>
+
+            <div class="new_task_creator">
+                <form action="" data-new-task-form>
+                    <input class="new task" type="text" data-new-task-input placeholder="New Task Name" area-label="new task name">
+                    <button class="btn create" aria-label="create new list">+</button>
+                </form>
+            </div>
+
+            <div class="delete_stuff">
+                <lottie-player class="clear_icon" data-clear-complete-tasks-button src="assets/img/lf30_editor_afgrh7ck.json"  background="transparent"  speed="1"  style="width: 40px; height: 40px;"  loop  autoplay></lottie-player>
+                <button class="btn delete one" data-clear-complete-tasks-button>Clear Completed Tasks</button>
+                <lottie-player class="clear_icon" data-delete-list-btn src="assets/img/lf30_editor_s6ol3b5y.json"  background="transparent"  speed="1"  style="width: 40px; height: 40px;"  loop  autoplay></lottie-player>
+                <button class="btn delete two" data-delete-list-btn>Delete List</button>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox" />
+            <label>
+                <span class="custom_checkbox"></span>
+            </label>
+        </div>
+    </template>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="text/javascript" src="assets/js/vanilla-tilt.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".todo_list"), {
+            max: 20,
+            speed: 3000,
+            scale: 1,
+            transition: true,
+            glare: true,
+            "max-glare": 0.35,
+        });
+    </script>
+</body>
+</html>

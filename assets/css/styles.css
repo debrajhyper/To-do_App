@@ -1,0 +1,494 @@
+:root{
+  --clr-primary: rgb(54,112,199);
+  --clr-light:#f4f4f4;
+  --clr-dark: #333;
+  --clr-warning: rgb(99,36,36);
+}
+
+*::after{
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "work sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  /*background-color: var(--clr-primary);*/
+  background-color: rgba(64, 0, 167, 0.842);
+  color:var(--clr-light);
+  display: grid;
+  grid: 
+    "header header header header" auto
+    "...... lists active ......" auto / 
+    1fr minmax(100px, 500px) minmax(250px, 500px) 1fr;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: calc(7vw + 2rem);
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.08);
+  letter-spacing: 2px;
+  margin: -0.3em 0 0.5em;
+}
+
+
+
+
+
+
+.all_task {
+  grid-area: lists;
+}
+
+.all_task .task_list {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+}
+
+.all_task .task_list_title {
+  position: relative;
+  left: -60px;
+  font-size: 3rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media (max-width : 1020px) {
+  .all_task .task_list_title {
+    position: relative;
+    left: 0px;
+    font-size: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+}
+
+
+.all_task .task_list .list_name {
+  cursor: pointer;
+  color: #ffffffce;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.all_task .task_list .list_name:hover {
+  opacity: 1;
+  color: rgb(255, 255, 255);
+}
+
+.all_task .task_list .active_list {
+  font-weight: 700;
+  color:#f4f4f4;
+  opacity: 1;
+}
+
+form{
+  display: flex;
+}
+
+form .new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+  outline: none;
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+  padding: 0.25em;
+  overflow-x: hidden;
+}
+
+form .new::placeholder{
+  color: rgb(255, 255, 255);
+  font-size: 1.0rem!important;
+  opacity: 0.4;
+  transition: 0.2s all ease-out;
+}
+
+form .new:focus{
+  border-bottom-width: 3px;
+}
+
+form .new:focus::placeholder{
+  opacity: 0.15;
+}
+
+form .new.list{
+  font-size: 1.1rem;
+}
+
+form .new.task {
+  margin-bottom: 0;
+}
+
+form .btn{
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+form .btn.create{
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
+  transition: opacity 250ms ease-in;
+}
+
+form .btn.create:hover{
+  opacity: 0.9;
+}
+
+
+
+
+
+
+.box {
+  --spacer: 2em;
+
+  grid-area: active;
+  /*background: var(--clr-light);*/
+  color: var(--clr-light);
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .box {
+    --spacer: 1em;
+  
+    grid-area: active;
+    /*background: var(--clr-light);*/
+    color: var(--clr-light);
+    position: relative;
+    padding-left: 30px;
+  }
+}
+
+.box .square {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  animation : animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+.box .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 992px) {
+  .box .square:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 90px;
+    height: 100px;
+  }
+}
+
+.box .square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .box .square:nth-child(2) {
+    top: 150px;
+    left: -50px;
+    width: 90px;
+    height: 90px;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .box .square:nth-child(2) {
+    top: 100px;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+  }
+}
+
+.box .square:nth-child(3) {
+  bottom: 50px;
+  right: -60px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+
+.box .square:nth-child(4) {
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+
+@media (max-width: 576px) {
+  .box .square:nth-child(4) {
+    top: -50px;
+    left: 140px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes animate 
+{
+  0%,100% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(20% at 92% 74%);
+  filter: blur(100px);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgb(0, 255, 221), rgb(55, 0, 255));
+  clip-path: circle(8% at 48% 30%);
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+
+
+.todo_list {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.todo_list .todo_header{
+  padding: var(--spacer);
+
+  background: #ffffff17;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.todo_list .todo_header .list_title {
+  margin: 0 1em 0 0;
+}
+
+.todo_list .todo_header .task_count {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo_list .todo_body {
+  padding: var(--spacer);
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.todo_list .todo_body .tasks .task label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  /*margin-bottom: 1.5em;*/
+  cursor: pointer;
+}
+
+.todo_list .todo_body .tasks .task{
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.todo_list .todo_body .tasks .task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -0.5em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+}
+
+.todo_list .todo_body .tasks .task .custom_checkbox {
+  --size: 0.75em;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+
+.todo_list .todo_body .tasks .task:hover .custom_checkbox, 
+[type="checkbox"]:focus + label .custom_checkbox {
+  --color: #f00;
+
+  transform: scale(1.2);
+  /*color: var(--clr-primary);*/
+  color: var(--color);
+}
+
+[type="checkbox"]:checked + label .custom_checkbox {
+  background: var(--color);
+  border-color: var(--color)!important;
+  box-shadow: inset 0 0 0px 2px white;
+}
+
+[type="checkbox"]:checked + label {
+  opacity: 0.3;
+}
+
+.tasks .task label::after {
+  content: "";
+  position: absolute;
+  left: 1.5em;
+  top: 50%;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.todo_list .todo_body .new_task_creator .create {
+  color: var(--clr-light);
+  opacity: 1;
+}
+
+.todo_list .todo_body .new_task_creator .create:hover {
+  opacity: 0.4;
+}
+
+.todo_list .todo_body .new_task_creator form .new::placeholder {
+  color: rgb(255, 255, 255)!important;
+  font-size: 1.0rem!important;
+  opacity: 0.4;
+  transition: 0.2s all ease-out;
+} 
+
+.todo_list .todo_body .new_task_creator form .new:focus::placeholder {
+  opacity: 0.15;
+} 
+
+.todo_list .todo_body .delete_stuff {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -70px;
+  overflow-x: hidden;
+}
+
+.todo_list .todo_body .delete_stuff .clear_icon {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.todo_list .todo_body .delete_stuff .btn.delete {
+  color: white;
+  transition: color 200ms;
+  position: relative;
+  font-size: 1rem;
+  opacity: 1;
+  letter-spacing: 0.7px;
+}
+
+.todo_list .todo_body .delete_stuff .btn.delete.one {
+  transform: translate(-30%);
+  transition: all 0.7s ease-in-out;
+  transition-delay: 80ms;
+  opacity: 0;
+}
+
+.todo_list .todo_body .delete_stuff .clear_icon:hover + .btn.delete.one {
+  position: relative;
+  font-size: 1rem;
+  transform: translate(-12%);
+  opacity: 1;
+}
+
+.todo_list .todo_body .delete_stuff .btn.delete.two {
+  transform: translate(-60%);
+  transition: all 0.7s ease-in-out;
+  transition-delay: 80ms;
+  opacity: 0;
+}
+
+.todo_list .todo_body .delete_stuff .clear_icon:hover + .btn.delete.two {
+  position: relative;
+  font-size: 1rem;
+  transform: translate(-25%);
+  opacity: 1;
+}
+
