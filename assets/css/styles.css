@@ -236,7 +236,7 @@ form .btn.create:hover{
 }
 
 .box .square:nth-child(3) {
-  bottom: 50px;
+  bottom: 90px;
   right: -60px;
   width: 80px;
   height: 80px;
@@ -342,9 +342,12 @@ body::after {
 }
 
 .todo_list .todo_body .tasks .task label {
+  /*font-size: 1.3rem;*/
   display: inline-flex;
   align-items: center;
   position: relative;
+  line-height: 1.3;
+  word-break: break-all;
   /*margin-bottom: 1.5em;*/
   cursor: pointer;
 }
@@ -438,7 +441,7 @@ body::after {
 
 .todo_list .todo_body .delete_stuff {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   position: absolute;
   width: 100%;
   left: 0;
