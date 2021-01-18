@@ -470,7 +470,7 @@ body::after {
 .todo_list .todo_body .delete_stuff .btn.delete.one {
   transform: translate(-30%);
   transition: all 0.7s ease-in-out;
-  transition-delay: 80ms;
+  /*transition-delay: 80ms;*/
   opacity: 0;
 }
 
@@ -484,7 +484,7 @@ body::after {
 .todo_list .todo_body .delete_stuff .btn.delete.two {
   transform: translate(-60%);
   transition: all 0.7s ease-in-out;
-  transition-delay: 80ms;
+  /*transition-delay: 80ms;*/
   opacity: 0;
 }
 
