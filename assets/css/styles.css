@@ -24,11 +24,57 @@ body {
     "header header header header" auto
     "...... lists active ......" auto / 
     1fr minmax(100px, 500px) minmax(250px, 500px) 1fr;
-    overflow-x: hidden;
+  overflow-x: hidden;
+  justify-content: center;
 }
 
 
-
+@media (max-width : 800px){
+  body {
+    grid-gap:0rem;
+    grid: 
+    "header header header header" auto
+    "...... ...... lists ......" auto
+    "...... active active ......" auto / 
+    1fr minmax(100px, 500px) minmax(250px, 500px) 1fr;
+  overflow-x: hidden;
+  justify-content: center;
+  }
+  .box {
+    padding: 10%;
+    margin-top: 20%;
+  }
+  .box .square:nth-child(1) {
+    top: 5px!important;
+    right: 10px!important;
+    width: 90px;
+    height: 100px;
+  }
+  .box .square:nth-child(2) {
+    top: 100px;
+    left: 5px!important;
+    width: 85px!important;
+    height: 85px!important;
+    z-index: 2;
+  }
+  .box .square:nth-child(3) {
+    bottom: 150px!important;
+    right: 10px!important;
+    width: 70px!important;
+    height: 70px!important;
+    z-index: 2;
+  }
+  .box .square:nth-child(4) {
+    top: 0px!important;
+    left: 140px;
+    width: 50px;
+    height: 50px;
+  }
+  .todo_list .todo_body .delete_stuff .btn.delete {
+    font-size: 0.8rem!important;
+    letter-spacing: 0.7px;
+  }
+}
 
 
 
@@ -166,18 +212,6 @@ form .btn.create:hover{
   position: relative;
 }
 
-@media (max-width: 576px) {
-  .box {
-    --spacer: 1em;
-  
-    grid-area: active;
-    /*background: var(--clr-light);*/
-    color: var(--clr-light);
-    position: relative;
-    padding-left: 30px;
-  }
-}
-
 .box .square {
   position: absolute;
   background: rgba(255,255,255,0.1);
@@ -225,16 +259,6 @@ form .btn.create:hover{
   }
 }
 
-@media (max-width: 576px) {
-  .box .square:nth-child(2) {
-    top: 100px;
-    left: -10px;
-    width: 60px;
-    height: 60px;
-    z-index: 2;
-  }
-}
-
 .box .square:nth-child(3) {
   bottom: 90px;
   right: -60px;
@@ -251,12 +275,7 @@ form .btn.create:hover{
 }
 
 @media (max-width: 576px) {
-  .box .square:nth-child(4) {
-    top: -50px;
-    left: 140px;
-    width: 50px;
-    height: 50px;
-  }
+  
 }
 
 @keyframes animate 
@@ -470,7 +489,7 @@ body::after {
 .todo_list .todo_body .delete_stuff .btn.delete.one {
   transform: translate(-30%);
   transition: all 0.7s ease-in-out;
-  /*transition-delay: 80ms;*/
+  transition-delay: 80ms;
   opacity: 0;
 }
 
@@ -484,7 +503,7 @@ body::after {
 .todo_list .todo_body .delete_stuff .btn.delete.two {
   transform: translate(-60%);
   transition: all 0.7s ease-in-out;
-  /*transition-delay: 80ms;*/
+  transition-delay: 80ms;
   opacity: 0;
 }
 
