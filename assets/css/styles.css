@@ -10,14 +10,18 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "work sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   box-sizing: border-box;
-  /*background-color: var(--clr-primary);*/
-  background-color: rgba(64, 0, 167, 0.842);
+  /*background-color: rgba(64, 0, 167, 0.842);*/
+  background: linear-gradient(160deg, rgb(142, 45, 226), rgb(74, 0, 224));
   color:var(--clr-light);
   display: grid;
   grid: 
@@ -31,14 +35,18 @@ body {
 
 @media (max-width : 800px){
   body {
+    background: rgba(64, 0, 167, 0.842);
     grid-gap:0rem;
     grid: 
     "header header header header" auto
-    "...... ...... lists ......" auto
+    "...... lists lists ......" auto
     "...... active active ......" auto / 
     1fr minmax(100px, 500px) minmax(250px, 500px) 1fr;
   overflow-x: hidden;
   justify-content: center;
+  }
+  .all_task {
+    padding: 5%;
   }
   .box {
     padding: 10%;
@@ -53,8 +61,8 @@ body {
   .box .square:nth-child(2) {
     top: 100px;
     left: 5px!important;
-    width: 85px!important;
-    height: 85px!important;
+    width: 80px!important;
+    height: 80px!important;
     z-index: 2;
   }
   .box .square:nth-child(3) {
