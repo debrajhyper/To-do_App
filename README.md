@@ -2,7 +2,7 @@
 
 Website : https://debrajhyper.github.io/To-do_App/
 
-    A web app to manage your daily tasks.
+    A web app to manage your daily tasks. 📑
     
     * Infinitely flexible 📝
     * Incredibly easy to use 🧡
